@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+     
+       <root name="File"   >
+        
+           <menuItem name="Open File"/>
+          <!--  --> <submenu name="Create File" >
+               <menuItem name="Java" />
+               <menuItem name="XML" />
+               <menuItem name="JPA" />
+               <menuItem name="JS"/>
+           </submenu>
+           <submenu name="Modify File"   >
+                <menuItem name="Java"   />
+                <menuItem name="XML"    />
+                <menuItem name="CPP"   />
+                <menuItem name="PHY"   />
+           </submenu>
+       </root>
+       <root name="Settings"   >
+        
+             <submenu name="Editor Settings"    >
+                    <menuItem name="Font Setting"   />
+                    <submenu name="Others"   >
+                            <menuItem name="JDK Setting"   />
+                            <menuItem name="Server Setting"   />
+                            <menuItem name="Server Setting"   />
+                    </submenu>
+                    
+             </submenu>
+       
+       </root>
+       
+       <root name="About Us">
+       
+       </root>
+</menu>
