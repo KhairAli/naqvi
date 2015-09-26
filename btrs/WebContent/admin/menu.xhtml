@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<body> 
+
+   
+     	<ui:composition>
+	
+			<p:panelMenu style="width:175px">
+        						<p:submenu label="Ajax Menuitems">
+							            <p:menuitem value="Save" actionListener="#" icon="ui-icon-disk" />
+            							<p:menuitem value="Update" actionListener="#"  icon="ui-icon-arrowrefresh-1-w" />
+        						</p:submenu>
+	        					<p:submenu label="Non-Ajax Menuitem">
+   	         						<p:menuitem value="Delete" actionListener="#"  ajax="false" icon="ui-icon-close"/>
+        						</p:submenu>
+						        <p:submenu label="Management" >
+                    						<p:menuitem value="Bus Management" action="#{pageController.navigate('vehicle')}"  icon="ui-icon-home"  update="@all"/>
+                    						<p:menuitem value="Cities" url="http://www.primefaces.org/documentation" icon="ui-icon-document" />
+                    						<p:menuitem value="Source/Destination" url="http://www.primefaces.org/downloads" icon="ui-icon-arrowthick-1-s" />
+                    						<p:menuitem value="Support" url="http://www.primefaces.org/support" icon="ui-icon-wrench" />
+        						</p:submenu>
+   		 </p:panelMenu>
+				
+	    </ui:composition>
+
+</body> 
+</html>

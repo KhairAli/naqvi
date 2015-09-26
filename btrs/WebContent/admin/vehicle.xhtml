@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+       <ui:composition >
+                             
+                              
+                            Vehicle No :<p:inputText value= "#{mgtController.vechicle.vehicleNo}"  /><br/>
+                            Vehicle Type :<p:selectOneMenu id="vehType" value="#{mgtController.vechicle.vehicleType}" style="width:150px">
+								                <f:selectItem itemLabel="Select Vehicle" itemValue="-1" noSelectionOption="true" />
+								                <f:selectItem itemLabel="Bus" itemValue="Bus"  />
+								                <f:selectItem itemLabel="Coach" itemValue="Coach"  />
+								                <f:selectItem itemLabel="Van" itemValue="Van" />
+            							  </p:selectOneMenu><br/>
+                            Total Seats:<p:inputText value= "#{mgtController.vechicle.vechicleSeats}"  /><br/>
+                            <p:commandButton action ="#{mgtController.saveVechile}" value="save" update = "vechicleDT"/>
+        					<p:dataTable id="vechicleDT" var="vehicle" value="#{mgtController.vehicleList}" >
+        							<f:facet name="header">
+            										Vehicles
+        							</f:facet>
+        							<p:column headerText="Id"  visible="false">
+            									<h:outputText value="#{vehicle.id}"  />
+        						    </p:column>
+        							<p:column headerText="Vehicle No" >
+            									<h:outputText value="#{vehicle.vehicleNo}" />
+        						    </p:column>
+        							<p:column headerText="Vehicle Type">
+            									<h:outputText value="#{vehicle.vehicleType}" />
+        						    </p:column>
+        							<p:column headerText="Total Seats">
+            									<h:outputText value="#{vehicle.vechicleSeats}" />
+        						    </p:column>
+        							<p:column headerText="Delete">
+										<p:commandLink id="deleteLink" update="vechicleDT" actionListener="#{mgtController.deleteVehilce(vehicle)}">
+        											<h:outputText value="Delete" />
+    									</p:commandLink>
+    							   </p:column>
+
+        						    
+        					</p:dataTable>	    
+                            
+       
+       </ui:composition>
+
+</html>
