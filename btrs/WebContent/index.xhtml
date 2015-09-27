@@ -9,8 +9,19 @@
 <h:body> 
  <h:form>
 
-               <p:inputText value ="" />
-               <p:commandButton value="Login"  action="#{loginController.navigate()}"></p:commandButton>
+            
+               User Login : <p:inputText value ="#{loginController.loginUser.userLogin}" />
+               User Password : <p:inputText value ="#{loginController.loginUser.userPassword}" />
+               <p:commandButton value="Login"  action="#{loginController.authenticateUser}"/>
+               <br/>
+               
+               Name : <p:inputText value ="#{loginController.signupUser.userName}" />
+               Login : <p:inputText value ="#{loginController.signupUser.userLogin}" />
+               Password : <p:inputText value ="#{loginController.signupUser.userPassword}" />
+               Address: <p:inputText value ="#{loginController.signupUser.userAddress}" />
+               Cell : <p:inputText value ="#{loginController.signupUser.userCell}" />
+               <p:commandButton value="Register"  action="#{loginController.registration()}"></p:commandButton><br/>
+
 </h:form>
 </h:body> 
 </html>
