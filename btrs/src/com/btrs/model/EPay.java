@@ -5,6 +5,7 @@ public class EPay extends GenericModel {
 	private String ePayAcountNo ;
 	private User user;
 	private Long balance ;
+	
 	public String getePayAcountNo() {
 		return ePayAcountNo;
 	}

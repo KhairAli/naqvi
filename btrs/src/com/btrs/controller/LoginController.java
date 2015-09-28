@@ -5,16 +5,14 @@ import java.sql.SQLException;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
-import javax.servlet.http.HttpSession;
+import javax.faces.bean.RequestScoped;
 
 import com.btrs.common.SessionUtil;
 import com.btrs.model.User;
 import com.btrs.service.UserService;
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class LoginController implements Serializable{
 
 	/**
@@ -38,10 +36,10 @@ public class LoginController implements Serializable{
 			if(loginUser != null){
 				SessionUtil.getSession().setAttribute("currentUser", loginUser);
 				if(loginUser.getUserType().equalsIgnoreCase("User")){
-					 userType = "user";
+					 userType = "user/home.xhtml?faces-redirect=true";
 				}else {
 					
-					userType =  "admim";
+					userType =  "admin/home.xhtml?faces-redirect=true";
 				}
 			}else{
 				

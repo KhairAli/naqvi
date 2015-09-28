@@ -2,7 +2,7 @@ package com.btrs.model;
 
 import java.io.Serializable;
 
-public abstract class GenericModel implements Serializable {
+public abstract class GenericModel implements Serializable{
 
 	private Integer id;
 
