@@ -34,6 +34,19 @@ public class SourceDestDAO implements Serializable {
 	}
 	
 	
+	public void save(SourceDestination sd) throws SQLException {
+		String query = "Insert into src-dest(source,destination) values(?,?)";
+		PreparedStatement ps = DBUtil.getPreparedStatement(query);
+		ps.setInt(1, sd.getSource().getId());
+		ps.setInt(2, sd.getDestination().getId());
+		ps.executeUpdate();
+	}
 	
+	public void delete(SourceDestination sd) throws SQLException {
+		String query ="Delete from src-dest where sd_id = ?";
+		PreparedStatement ps =DBUtil.getPreparedStatement(query);
+		ps.setInt(1, sd.getId());
+		ps.executeUpdate();
+	}
 	
   }
