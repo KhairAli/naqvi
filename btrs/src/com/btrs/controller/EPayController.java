@@ -31,7 +31,8 @@ public class EPayController implements Serializable{
 		ePay.setUser(user);
 	}
 	
-	public String balanceInquiry() {
+	public void balanceInquiry() {
+
 		Long balance = null;
 		
 		try {
@@ -41,7 +42,7 @@ public class EPayController implements Serializable{
 			e.printStackTrace();
 		}
 	//	System.out.println(balance);
-		return "";
+		//return "";
 		
 	}
 

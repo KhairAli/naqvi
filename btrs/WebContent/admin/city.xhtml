@@ -4,15 +4,9 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui"
       xmlns:h="http://java.sun.com/jsf/html"> 
-
-<h:head></h:head> 
-<body> 
-
        <ui:composition>
-                             
-                              
                             City Name :<p:inputText value= "#{mgtController.city.cityName}"  /><br/>
-                            <p:commandButton action ="#{mgtController.saveCity}" value="save" />
+                            <p:commandButton action ="#{mgtController.saveCity}" value="save" update = "cityDT" />
         					<p:dataTable id="cityDT" var="city" value="#{mgtController.cityList}">
         							<f:facet name="header">
             										Cities
@@ -20,10 +14,12 @@
         							<p:column headerText="City Name">
             									<h:outputText value="#{city.cityName}" />
         						    </p:column>
+        							<p:column headerText="Delete">
+										<p:commandLink id="deleteLink" update="cityDT" actionListener="#{mgtController.deleteCity(city)}">
+        											<h:outputText value="Delete" />
+    									</p:commandLink>
+    							   </p:column>
+        						    
         					</p:dataTable>	    
-                            
-       
        </ui:composition>
-
-</body> 
 </html>

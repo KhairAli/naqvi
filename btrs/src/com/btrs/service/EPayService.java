@@ -1,11 +1,12 @@
 package com.btrs.service;
 
+import java.io.Serializable;
 import java.sql.SQLException;
 
 import com.btrs.dao.EPayDAO;
 import com.btrs.model.EPay;
 
-public class EPayService {
+public class EPayService implements Serializable{
 
 	private EPayDAO epDAO = new EPayDAO();
 	

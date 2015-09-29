@@ -1,10 +1,11 @@
 package com.btrs.controller;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.view.ViewScoped;
+import javax.faces.bean.ViewScoped;
 
 @ManagedBean
 @ViewScoped
+
 public class PageController {
 
 	private String  url  = "welcome.xhtml";

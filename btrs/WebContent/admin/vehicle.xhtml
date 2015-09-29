@@ -6,8 +6,6 @@
       xmlns:h="http://java.sun.com/jsf/html"> 
 
        <ui:composition >
-                             
-                              
                             Vehicle No :<p:inputText value= "#{mgtController.vechicle.vehicleNo}"  /><br/>
                             Vehicle Type :<p:selectOneMenu id="vehType" value="#{mgtController.vechicle.vehicleType}" style="width:150px">
 								                <f:selectItem itemLabel="Select Vehicle" itemValue="-1" noSelectionOption="true" />
@@ -16,7 +14,7 @@
 								                <f:selectItem itemLabel="Van" itemValue="Van" />
             							  </p:selectOneMenu><br/>
                             Total Seats:<p:inputText value= "#{mgtController.vechicle.vechicleSeats}"  /><br/>
-                            <p:commandButton action ="#{mgtController.saveVechile}" value="save" update = "vechicleDT"/>
+                            <p:commandButton action ="#{mgtController.saveVechile}" value="save"  update="vechicleDT"/>
         					<p:dataTable id="vechicleDT" var="vehicle" value="#{mgtController.vehicleList}" >
         							<f:facet name="header">
             										Vehicles
@@ -42,7 +40,7 @@
         						    
         					</p:dataTable>	    
                             
-       
+       				
        </ui:composition>
 
 </html>

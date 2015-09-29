@@ -1,13 +1,19 @@
 package com.btrs.service;
 
+import java.io.Serializable;
 import java.sql.SQLException;
 
 import com.btrs.dao.UserDAO;
 import com.btrs.model.User;
 
-public class UserService {
+public class UserService implements Serializable {
 	
-	UserDAO uDAO = new UserDAO();
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private UserDAO uDAO = new UserDAO();
 	
 	public Integer registerUser(User user) throws SQLException {
 		user.setUserType("User");

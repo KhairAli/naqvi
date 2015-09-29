@@ -11,23 +11,19 @@
        <ui:composition>
                              
                               
-                            Source <p:selectOneMenu id="source" value="#{mgtController}" style="width:150px">
+                            Source <p:selectOneMenu id="source" value="#{mgtController.source}" style="width:150px">
 								                <f:selectItem itemLabel="Select Vehicle" itemValue="-1" noSelectionOption="true" />
-								                <f:selectItem itemLabel="Bus" itemValue="Bus"  />
-								                <f:selectItem itemLabel="Coach" itemValue="Coach"  />
-								                <f:selectItem itemLabel="Van" itemValue="Van" />
-            							  </p:selectOneMenu><br/>
-                            Destination <p:selectOneMenu id="destination" value="#{mgtController}" style="width:150px">
+												<f:selectItems value="#{mgtController.cityList}"  var="city" itemLabel="#{city.cityName}"  itemValue="#{city.cityName}"/>
+    							  </p:selectOneMenu><br/>
+                            Destination <p:selectOneMenu id="destination" value="#{mgtController.destination}" style="width:150px">
 								                <f:selectItem itemLabel="Select Vehicle" itemValue="-1" noSelectionOption="true" />
-								                <f:selectItem itemLabel="Bus" itemValue="Bus"  />
-								                <f:selectItem itemLabel="Coach" itemValue="Coach"  />
-								                <f:selectItem itemLabel="Van" itemValue="Van" />
+												<f:selectItems value="#{mgtController.cityList}"  var="city" itemLabel="#{city.cityName}"  itemValue="#{city.cityName}"/>
             							  </p:selectOneMenu><br/>
             							  
                             <p:commandButton action ="#{mgtController.saveVechile}" value="save" />
-        					<p:dataTable id="vechicleDT" var="vehicle" value="#{mgtController.vehicleList}">
+        					<p:dataTable id="srcdestDT" var="sd" value="#{mgtController.vehicleList}">
         							<f:facet name="header">
-            										SD
+            										Source-Destination
         							</f:facet>
         							<p:column headerText="Source">
             									<h:outputText value="#{vehicle.vehicleNo}" />

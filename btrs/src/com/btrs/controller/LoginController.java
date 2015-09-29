@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 
 import com.btrs.common.SessionUtil;
 import com.btrs.model.User;
@@ -51,6 +52,7 @@ public class LoginController implements Serializable{
 		}
 		
 	}
+	
 	public void registration() {
 		try {
 			uService.registerUser(signupUser);

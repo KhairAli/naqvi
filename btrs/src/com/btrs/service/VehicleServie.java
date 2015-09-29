@@ -8,6 +8,10 @@ import com.btrs.model.Vehicle;
 
 public class VehicleServie implements java.io.Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private VehicleDAO vDAO = new VehicleDAO();
 	
 	public void addVehicle(Vehicle v) throws SQLException {
