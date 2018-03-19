@@ -37,8 +37,6 @@ public class ManagementController implements Serializable {
 	private List<SourceDestination> srcDestList = new ArrayList<>();
 	private SourceDestination srcDest = new SourceDestination();
 	
-			
-	
 
 	@PostConstruct
 	public void init(){
